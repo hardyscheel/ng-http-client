@@ -1,4 +1,4 @@
-export class GitHubRepo {
+export class GitHubRepository {
   id: string;
   name: string;
   html_url: string;
