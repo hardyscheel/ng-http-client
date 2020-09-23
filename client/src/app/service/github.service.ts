@@ -16,7 +16,14 @@ export class GitHubService {
   constructor(private http: HttpClient) { }
 
   // The https://api.github.com/users/<username>?repos endpoint returns the list of Repositories belonging to the user <userName>.
-  getGitHubRepository(userName: string): Observable<any> {
-    return this.http.get(this.baseURL + 'users/' + userName + '/repos')
+  // Use a more strongly typed response by using <GitHubRepository[]>.
+  getGitHubRepository(userName: string): Observable<GitHubRepository[]> {
+    return this.http.get<GitHubRepository[]>(
+      this.baseURL + 'users/' + userName + '/repos',
+      {
+        observe: 'body',
+        responseType: "json" // How is the response parsed. It can be one of the arraybuffer, json blob or text.
+      }
+    )
   }
 }
