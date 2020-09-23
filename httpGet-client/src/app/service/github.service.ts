@@ -4,7 +4,7 @@ import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
 
-import { GitHubRepository } from '../model/githubrepository';
+import { GitHubRepository } from '../model/githubrepository.model';
 
 @Injectable({
   providedIn: 'root'

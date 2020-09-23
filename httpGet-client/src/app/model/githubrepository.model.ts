@@ -1,4 +1,4 @@
-export class GitHubRepository {
+export interface GitHubRepository {
   id: string;
   name: string;
   html_url: string;
