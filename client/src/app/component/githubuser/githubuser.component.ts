@@ -2,34 +2,35 @@ import { Component, OnInit } from '@angular/core';
 
 import { GitHubService } from '../../service/github.service';
 
-import { GitHubRepository } from '../../model/githubrepository.model';
+import { GitHubUser } from '../../model/githubuser.model';
 
 @Component({
-  selector: 'app-githubrepository',
-  templateUrl: './githubrepository.component.html',
-  styleUrls: ['./githubrepository.component.css']
+  selector: 'app-githubuser',
+  templateUrl: './githubuser.component.html',
+  styleUrls: ['./githubuser.component.css']
 })
-export class GitHubRepositoryComponent implements OnInit {
+export class GitHubUserComponent implements OnInit {
 
   userName: string = "HardyScheel";
-  gitHubRepositories: GitHubRepository[];
+  gitHubUser: GitHubUser;
 
   loading: boolean = false;
   errorMessage: string;
 
-  constructor(private gitHubService: GitHubService) { }
+  constructor(private gitHubService: GitHubService) {
+  }
 
   ngOnInit(): void {
   }
 
-  getGitHubRepository() {
+  getGitHubUserData() {
     this.loading = true;
     this.errorMessage = "";
-    this.gitHubService.getGitHubRepository(this.userName)
+    this.gitHubService.getGitHubUserData(this.userName)
       .subscribe(
         (response) => {                           //next() callback
           console.log('response received')
-          this.gitHubRepositories = response;
+          this.gitHubUser = response;
         },
         (error) => {                              //error() callback
           console.error('Request failed with error')
@@ -40,5 +41,7 @@ export class GitHubRepositoryComponent implements OnInit {
           console.error('Request completed')      //This is actually not needed
           this.loading = false;
         })
+
   }
+
 }

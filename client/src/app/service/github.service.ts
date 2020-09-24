@@ -5,6 +5,7 @@ import { Observable, throwError } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
 
 import { GitHubRepository } from '../model/githubrepository.model';
+import { GitHubUser } from '../model/githubuser.model';
 
 @Injectable({
   providedIn: 'root'
@@ -23,6 +24,15 @@ export class GitHubService {
       {
         observe: 'body',
         responseType: "json" // How is the response parsed. It can be one of the arraybuffer, json blob or text.
+      }
+    )
+  }
+
+  getGitHubUserData(userName: string): Observable<GitHubUser> {
+    return this.http.get<GitHubUser>(this.baseURL + 'users/' + userName,
+      {
+        observe: 'body',
+        responseType: "json"
       }
     )
   }

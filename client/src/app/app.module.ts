@@ -9,11 +9,13 @@ import { FormsModule } from '@angular/forms'
 
 import { GitHubService } from './service/github.service';
 import { GitHubRepositoryComponent } from './component/githubrepository/githubrepository.component';
+import { GitHubUserComponent } from './component/githubuser/githubuser.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    GitHubRepositoryComponent
+    GitHubRepositoryComponent,
+    GitHubUserComponent
   ],
   imports: [
     BrowserModule,
