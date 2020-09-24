@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'httpGet'`, () => {
+  it(`should have as title 'ng-http-client'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('httpGet');
+    expect(app.title).toEqual('ng-http-client');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('httpGet app is running!');
+    expect(compiled.querySelector('.content span').textContent).toContain('ng-http-client app is running!');
   });
 });
