@@ -74,6 +74,7 @@ If the GitHub user has no custom domain on GitHub Page: `ng deploy --base-href=h
 
 ## Angular Material
 
+
 ```shell
 ng add @angular/material
 ```
@@ -86,3 +87,39 @@ Use the prebuilt theme: Pink/Blue Grey
 ng generate component component/github
 ```
 
+## NavigationComponent
+
+Follow this Tutorial for a Navigation Bar: https://www.smashingmagazine.com/2020/07/responsive-dashboard-angular-material-ng2-charts-schematics/
+
+
+```shell
+ng generate @angular/material:navigation component/navigation
+```
+
+Place router-outlet from AppComponent-template to NavigationComponent-template:
+
+navigation.component.html:
+```html
+...
+     </mat-toolbar>
+     <router-outlet></router-outlet>
+   </mat-sidenav-content>
+...
+```
+
+To link other routes in the navigation, use the `routerLink` directive.
+
+Add the following NavigationComponent-template.
+
+navigation.component.html:
+```html
+    <mat-nav-list>
+      <a *ngFor="let item of menuItems" mat-list-item [routerLink]="'/'+item"> {{item | titlecase}} </a>
+    </mat-nav-list>
+```
+
+Add this to navigation.component.ts:
+```
+...
+menuItems = ['github', githubuser', 'githubrepository'];
+```
