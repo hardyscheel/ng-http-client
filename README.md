@@ -72,4 +72,11 @@ OR
 
 If the GitHub user has no custom domain on GitHub Page: `ng deploy --base-href=https://<your username>.github.io/<your repositoryname>/`
 
+## Angular Material
+
+```shell
+ng add @angular/material
+```
+
+Use the prebuilt theme: Pink/Blue Grey
 
