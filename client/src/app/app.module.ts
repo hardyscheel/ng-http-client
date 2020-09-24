@@ -12,12 +12,14 @@ import { MaterialModule } from './module/material-module';
 import { GitHubService } from './service/github.service';
 import { GitHubRepositoryComponent } from './component/githubrepository/githubrepository.component';
 import { GitHubUserComponent } from './component/githubuser/githubuser.component';
+import { GithubComponent } from './component/github/github.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     GitHubRepositoryComponent,
     GitHubUserComponent,
+    GithubComponent,
   ],
   imports: [
     BrowserModule,

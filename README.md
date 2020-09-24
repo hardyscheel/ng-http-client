@@ -80,3 +80,9 @@ ng add @angular/material
 
 Use the prebuilt theme: Pink/Blue Grey
 
+## GithubComponent
+
+```shell
+ng generate component component/github
+```
+
