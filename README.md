@@ -1,7 +1,7 @@
 HTTP Client
 ===========
 
-This web app is a http client that calls RESTful APIs of some popular online services I am interested in. 
+This web app is a http client that calls RESTful APIs.
 
 You can view a demo here: [https://scheel.dev/ng-http-client/](https://scheel.dev/ng-http-client/)
 
