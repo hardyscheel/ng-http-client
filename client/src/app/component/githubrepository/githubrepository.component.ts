@@ -11,7 +11,7 @@ import { GitHubRepository } from '../../model/githubrepository.model';
 })
 export class GitHubRepositoryComponent implements OnInit {
 
-  userName: string = "hascheel";
+  userName: string = "hardyscheel";
   gitHubRepositories: GitHubRepository[];
 
   loading: boolean = false;
